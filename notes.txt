@@ -5,6 +5,7 @@ We want to make a chrome extension that will pop up a reminder to stretch every 
 Sources:
 https://levelup.gitconnected.com/chrome-extension-tutorial-replace-images-in-any-website-with-pikachu-de2a6e3548bb
 https://developer.chrome.com/docs/extensions/mv3/getstarted/
+https://stackoverflow.com/questions/15555295/how-to-disable-div-element-and-everything-inside
 
 Notes:
 Have to enable developer mode to load extensions. in Chrome, go to 'chrome://extensions' and check developer mode.
