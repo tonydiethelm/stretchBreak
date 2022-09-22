@@ -10,5 +10,8 @@
         "matches": ["<all_urls>"],
         "all_frames": true,
         "js":      ["./contentScript.js"]
-    }]
+    }],
+    "permissions": [
+        "storage"
+      ]
   }
