@@ -15,7 +15,8 @@ make a manifest.json file
 
 Can now load the extension at 'chrome://extensions', click the 'Load unpacked' button.
 
-
+background scripts run in a background page.
+content script runs on our pages.
 
 
 

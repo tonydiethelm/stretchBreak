@@ -1,0 +1,1 @@
+console.log("Pikachu Everywhere - Background Script is Running");
