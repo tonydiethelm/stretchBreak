@@ -23,4 +23,4 @@ function stretchBreak (){
 const timeInSeconds = 10
 const timeInMilliSeconds = timeInSeconds * 1000;
 setTimeout(stretchBreak, timeInMilliSeconds);
-setTimeout(function(){window.location.reload();}, timeInMilliSeconds + 5000);
+setTimeout(function(){window.location.reload();}, timeInMilliSeconds + 10000);
