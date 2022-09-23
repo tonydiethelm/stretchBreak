@@ -26,14 +26,22 @@ function stretchBreak (){
     }
 };
 
-//get the minutes desired, or set to 30. then call the set timeouts.
+
+//get the minutes desired. then call the set timeouts.
 const getAndGo = async function(){
-    timeBetweenStretchesInMinutes = await chrome.storage.local.get(['minutesDesired']);
+    //Get the desired time
+    let results = await chrome.storage.local.get(['minutesDesired']);
+    timeBetweenStretchesInMinutes = results.minutesDesired;
+    
     console.log('time Between Stretches In Minutes: ', timeBetweenStretchesInMinutes);
-    setTimeout(stretchBreak, timeBetweenStretchesInMinutes * 60000)
-    console.log('should be a stretch break here...')
-    let workTime = timeBetweenStretchesInMinutes * 60000;
-    setTimeout(function(){window.location.reload();}, workTime + stretchLengthInMilliseconds)
+    
+    //change minutes into milliseconds for the timeouts. 
+    let timeBetweenStretchesInMilliseconds = timeBetweenStretchesInMinutes * 60000;
+
+    //stretch in...
+    setTimeout(stretchBreak, timeBetweenStretchesInMilliseconds)
+    //refresh in.... a little longer
+    setTimeout(function(){window.location.reload();}, timeBetweenStretchesInMilliseconds + stretchLengthInMilliseconds)
 }
 
 getAndGo();
