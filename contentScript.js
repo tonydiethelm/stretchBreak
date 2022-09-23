@@ -10,20 +10,30 @@ We want to enforce stretch breaks.
 We are going to change all the text to "go stretch!" and change the images to a funny stretching gif.
 */
 
+const arrayOfGifs = [
+    'https://i.imgur.com/5ocRuPi.gif',
+    'https://i.imgur.com/qd7JaDf.gif',
+    'https://i.imgur.com/nU1VYc4.gif',
+    'https://i.imgur.com/5jOl57g.gif',
+    'https://i.imgur.com/dPRK2LU.gif',
+    'https://i.imgur.com/H0iSodz.gif',
+    'https://i.imgur.com/7tiR1kz.gif',
+  ]
+
 
 
 function stretchBreak (){
     console.log("Stretch Break!")
     //change all the images
     let images = document.getElementsByTagName('img');
-    for(let eachImage of images){
-        eachImage.src = 'https://i.imgur.com/5ocRuPi.gif';
-    }
+    for(const eachImage of images){
+    eachImage.src = arrayOfGifs[Math.floor(Math.random() * arrayOfGifs.length)];
+  }
     //change all the text.
-    let texts = document.querySelectorAll('h1, h2, h3, h4, h5, p, li, td, pation, span, a');
-    for(let eachOne of texts){
-        eachOne.innerHTML = "Go Stretch!";
-    }
+    const texts = document.querySelectorAll('h1, h2, h3, h4, h5, h6, h7, h8, p, button, figcaption, li, td, pation, span, a');
+  for(const eachOne of texts){
+    eachOne.innerHTML = 'Go Stretch or touch some grass NOW!!';
+  }
 };
 
 
