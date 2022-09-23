@@ -26,16 +26,14 @@ function stretchBreak (){
     }
 };
 
-
-chrome.storage.local.get(['minutesDesired'])
-    .then((data) => {console.log('Do we have data? ', data)})
-    .catch((error) => {console.log('No data, we got an error: ', error)})
-
-console.log('checked that we can access local storage. Now need to do our timeouts.')
-
 //get the minutes desired, or set to 30. then call the set timeouts.
-chrome.storage.local.get(['minutesDesired'])
-    .then((data) => {timeBetweenStretchesInMinutes = data})  //30 minutes or input from options page.
-    .then(setTimeout(stretchBreak, timeBetweenStretchesInMinutes * 60000))
-    .then(setTimeout(function(){window.location.reload();}, stretchLengthInMilliseconds))
-    .catch((error) => {console.log('')})
+const getAndGo = async function(){
+    timeBetweenStretchesInMinutes = await chrome.storage.local.get(['minutesDesired']);
+    console.log('time Between Stretches In Minutes: ', timeBetweenStretchesInMinutes);
+    setTimeout(stretchBreak, timeBetweenStretchesInMinutes * 60000)
+    console.log('should be a stretch break here...')
+    let workTime = timeBetweenStretchesInMinutes * 60000;
+    setTimeout(function(){window.location.reload();}, workTime + stretchLengthInMilliseconds)
+}
+
+getAndGo();
