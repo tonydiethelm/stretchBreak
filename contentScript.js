@@ -2,7 +2,7 @@
 console.log("Stretch Break! - Content Script is Running");
 
 //set up defaults
-let stretchLengthInMilliseconds = 10000;
+let stretchLengthInMilliseconds = 15000;
 let timeBetweenStretchesInMinutes = 30;
 
 /*
